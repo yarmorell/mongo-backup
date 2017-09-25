@@ -17,4 +17,5 @@ ENV CRON_TIME_TWO_HOUR="30 */2 * * *"
 ADD run.sh run.sh
 VOLUME ["/var/backup_one_hour"]
 VOLUME ["/var/backup_two_hour"]
+RUN chmod +x run.sh
 ENTRYPOINT ["run.sh"]
