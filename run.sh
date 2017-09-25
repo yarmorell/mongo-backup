@@ -38,7 +38,7 @@ tail -F /var/log/mongo_backup.log &
 if [ -z "$1" ]; then
    
     echo "${CRON_TIME_ONE_HOUR}  /bin/bash /root/backup.sh >> /var/log/mongo_backup.log 2>&1" >> /root/crontab.conf
-    echo "${CRON_TIME_TWO_HOUR}  rsync -avz --delete /var/backup_one_hour/ /var/backup_two_hour/ >> /var/log/mongo_backup_rsync.log 2>&1" /root/crontab.conf
+    echo "${CRON_TIME_TWO_HOUR}  rsync -avz --delete /var/backup_one_hour/ /var/backup_two_hour/ >> /var/log/mongo_backup_rsync.log 2>&1" >> /root/crontab.conf
     
     crontab  /root/crontab.conf
     echo "=> Running cron job"
