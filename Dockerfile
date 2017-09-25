@@ -14,8 +14,8 @@ RUN mkdir /var/backup
 ENV CRON_TIME_ONE_HOUR="0 */1 * * *"
 ENV CRON_TIME_TWO_HOUR="30 */2 * * *"
 
-ADD run.sh run.sh
+ADD run.sh /root/run.sh
 VOLUME ["/var/backup_one_hour"]
 VOLUME ["/var/backup_two_hour"]
-RUN chmod +x run.sh
-ENTRYPOINT ["run.sh"]
+RUN chmod +x /root/run.sh
+ENTRYPOINT ["/root/run.sh"]
